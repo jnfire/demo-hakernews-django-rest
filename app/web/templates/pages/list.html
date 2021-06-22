@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Home{% endblock %}
+{% block contenido %}
+    {% for item in news %}
+        <article>
+            <p>
+                <h2>{{ item.title }}</h2>
+                <a href="{{ item.url }}">Ver Completo</a>
+            </p>
+        </article>
+    {% endfor %}
+{% endblock %}

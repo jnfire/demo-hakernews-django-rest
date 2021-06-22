@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} | Djanker News</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>
+                <a href="{% url 'list' %}">List</a>
+            </li>
+            <li>
+                <a href="{% url 'add-news' %}">Add News</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <h1>Dajanker News</h1>
+        {% block contenido %}{% endblock %}
+    </main>
+    <footer>
+        2021 Djanker News
+    </footer>
+</body>
+</html>
