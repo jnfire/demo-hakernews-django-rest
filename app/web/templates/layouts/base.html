@@ -1,8 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %} | Djanker News</title>
+    <script src="{% static 'js/vue.min.js' %}"></script>
+    <script defer src="{% static 'js/home.js' %}"></script>
 </head>
 <body>
     <header>
@@ -15,7 +18,7 @@
             </li>
         </ul>
     </header>
-    <main>
+    <main id="app">
         <h1>Dajanker News</h1>
         {% block contenido %}{% endblock %}
     </main>

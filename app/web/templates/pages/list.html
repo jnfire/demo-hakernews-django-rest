@@ -1,12 +1,11 @@
 {% extends 'layouts/base.html' %}
 {% block title %}Home{% endblock %}
 {% block contenido %}
-    {% for item in news %}
-        <article>
+        <article v-for="item in news">
             <p>
-                <h2>{{ item.title }}</h2>
-                <a href="{{ item.url }}">Ver Completo</a>
+                <h2><span>[[ item.votes ]]</span> - [[ item.title ]]</h2>
+                <a :href="item.url" target="_blank">Ver Completo</a>
+                <button @click.prevent="votar(item.id)">Votar</button>
             </p>
         </article>
-    {% endfor %}
 {% endblock %}

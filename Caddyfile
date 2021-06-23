@@ -1,0 +1,12 @@
+http://django.localhost:7000
+
+encode gzip zstd
+
+root * /home/javi/Proyectos/demo-hakernews-django-rest
+
+@notStatic {
+  not path /static/* /media/*
+}
+reverse_proxy @notStatic localhost:8000
+
+file_server
