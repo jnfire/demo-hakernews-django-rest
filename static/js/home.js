@@ -17,6 +17,23 @@ new Vue({
                 .then((json) => {
                     this.news = json;
                 })
+        },
+        votar: function (id) {
+            fetch('/api/v1/news/', {
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                method: 'PUT',
+                body: JSON.stringify(
+                    {
+                        'id': id,
+                    }
+                )
+            })
+            .then((json) => {
+                // Usamos la información recibida como necesitemos
+                this.getNews()
+            });
         }
     }
 })

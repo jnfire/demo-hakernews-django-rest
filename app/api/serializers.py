@@ -8,4 +8,4 @@ class NewsSerializer(serializers.HyperlinkedModelSerializer):
         # Establezco el modelo
         model = News
         # Establezco los campos que quiero ver
-        fields = ['title', 'url', 'votes', 'created']
+        fields = ['id', 'title', 'url', 'votes', 'created']
